@@ -1,0 +1,24 @@
+#Create dir /app
+[root@server ~]# 
+[root@server ~]# #inside /app create files 
+[root@server ~]# #index.html, app.py
+[root@server ~]# #
+[root@server ~]# #create user and give password
+[root@server ~]# #alice and undertaker
+[root@server ~]# #create Group "developers"
+[root@server ~]# ###Part 1
+[root@server ~]# 
+[root@server ~]# 1. Give The ownner of /app, full permission , group(read & execute), Other (no perm).
+bash: syntax error near unexpected token `('
+[root@server ~]# #2.
+[root@server ~]# #2. change index.html permission to (600)
+[root@server ~]# #3. make app.py executable for owner
+[root@server ~]# #Part 2
+[root@server ~]# 
+[root@server ~]# #change onwer of index.html to alice
+[root@server ~]# #change owner of  and group of app.py to alice:developers
+[root@server ~]# #change ownership of /Project "admin"
+[root@server ~]# #verify these ownerships
+[root@server ~]# 
+[root@server ~]# #Part3
+[root@server ~]# #give  user undertaker specifically. (read and execute) /Project.

@@ -1,0 +1,172 @@
+#FIND & GREP
+  632  #find /path <condition>
+  633  #find /path <condition> <action>
+  634  #1
+  635  #1 Search by name
+  636  find /etc -name "passwd"
+  637  find /etc -name "httpd.conf"
+  638  find /home -name "httpd.conf"
+  639  find /mnt -name "httpd.conf"
+  640  find /etc -name "PASSWD"
+  641  find /etc -name "passwd"
+  642  find /etc -iname "passwd"
+  643  find /etc -iname "PASSWD"
+  644  #find /etc -iname "PASSWD"
+  645  #"-iname"
+  646  #search files with "case insensitive search"
+  647  find /etc -type d -iname "httpd"
+  648  find /etc -type f -iname "httpd"
+  649  cd /etc/httpd
+  650  cd
+  651  cd /etc/logrotate.d/httd
+  652  cd /etc/logrotate.d/httpd
+  653  ###Task find all the regular files inside /home
+  654  find /home -type f
+  655  #redirections
+  656  ls
+  657  ls > output.ls
+  658  cat output.ls 
+  659  find /home -type f > regular_files.home
+  660  cat regular_files.home 
+  661  less regular_files.home 
+  662  less -N regular_files.home 
+  663  #/home/chaitanya
+  664  find /home/chaitanya/ -type f
+  665  find /home/chaitanya/ -type f > regular_file./home/chaitanya
+  666  find /home/chaitanya/ -type f > regular_file.chaitanya
+  667  less -N regular_file.chaitanya 
+  668  find /home/chaitanya/ -type d
+  669  find /home/chaitanya/ -type d > dir.chaitanya
+  670  less -N dir.chaitanya 
+  671  clear
+  672  #search by size
+  673  find /etc -size +5M
+  674  whatis du
+  675  du /etc/udev/hwdb.bin 
+  676  du -h /etc/udev/hwdb.bin 
+  677  find /etc -size -5M
+  678  du -sh /etc/httpd/state/
+  679  find /etc -size +1M -size -5M
+  680  du -sh /etc/selinux/targeted/policy/policy.33 
+  681  ##FInd files inside /home larger than 5M and less than 10M
+  682  find /home -size +5M -size -10M
+  683  du -sh /home/archive.tar.gz 
+  684  find /home -type f -size +5M -size -10M
+  685  find /home -type d -size +5M -size -10M
+  686  find /home  -size +5M -size -10M
+  687  ###task Find files owned by user chaitanya in the entire system
+  688  find / -user chaitanya 
+  689  ls -l /tmp/minikube_addons_ed2712e14e7a9a8105fe17bf2f7d556182f7545f_0.log
+  690  clear
+  691  ## find files inside /home owned by superuser
+  692  find /home -user root
+  693  ls -l /home/newname.txt 
+  694  ##you can also find files based on there modificatiob date
+  695  pwd
+  696  find . -mtime -1
+  697  find . -mtime -7
+  698  find /etc -mtime -1
+  699  find /etc -type f -mtime -1
+  700  find . -iname "*.tmp"
+  701  #Next part
+  702  #find /path -condition action
+  703  find /tmp -type d
+  704  find /etc -iname "passwd"
+  705  #find /etc -iname "passwd" -exec cp -av 
+  706  #cp
+  707  #cp -av source_file destination_file
+  708  find /etc -iname "passwd"
+  709  #find /etc -iname "passwd" -exec cp -av {}
+  710  #{}
+  711  find /etc -iname "passwd" -exec cp {} /tmp/passwd.backup \;
+  712  cd /tmp
+  713  ls
+  714  cat passwd.backup 
+  715  clear
+  716  find /etc -type d
+  717  find /etc -type d -exec cp -av {} /tmp \;
+  718  ls /tmp
+  719  find /tmp -type d
+  720  find /tmp -type d -exec rm -rvf {} \;
+  721  pwd
+  722* 
+  723  clear
+  724  history
+  725  clear
+  726  find /home -user chaitanya
+  727  find /home -user chaitanya -exec ls -l {} \;
+  728  clear
+  729  mkdir scripts
+  730  mkdir /scripts
+  731  cd /scripts/
+  732  ls
+  733  touch file{1..50}
+  734  ls
+  735  ls -l
+  736  #chmod +x filename
+  737  find /scripts/ -type f
+  738  find /scripts/ -type f -exec chmod +x {} \;
+  739  ls -l
+  740  #clear
+  741  #find /scripts/ -type f -exec chmod +x {} \;
+  742  ls
+  743  touch file{1..20}.sh
+  744  ls
+  745  ls -l
+  746  find /scripts/ -iname "*.sh"
+  747  find /scripts/ -iname "*.sh" -exec rm -rvf {} \;
+  748  find /scripts/ -type f "*.sh" -exec rm -rvf {} \;
+  749  find /scripts/ -type f 
+  750  find /scripts/ -type f "*.sh" -exec rm -rvf {file49,file50} \;
+  751  find /scripts/ -type f  -exec rm -rvf {file49,file50} \;
+  752  find /scripts/ -type f  -exec rm -rvf {file1,file2,file3,file4} \;
+  753  rm -vf file{20..30
+  754  rm -vf file{20..30}
+  755  ##grep
+  756  #grep coomand is used to  find text patterns inside the file 
+  757  #grep is also used to find text patterh from the output of any command
+  758  cp /etc/passwd /tmp/passwd.bak
+  759  cp /etc/passwd /tmp/
+  760  mkdir /tmp
+  761  cp /etc/passwd /tmp/
+  762  cat /tmp/passwd
+  763  #grep "pattern" filename
+  764  grep "root" /tmp/passwd
+  765  cat /tmp/passwd 
+  766  grep "chaitanya" /tmp/passwd
+  767  grep -n "chaitanya" /tmp/passwd
+  768  less -N /tmp/passwd 
+  769  grep -n "Admin" /tmp/passwd
+  770  grep -n "ADMIN" /tmp/passwd
+  771  grep -i "ADMIN" /tmp/passwd
+  772  grep -in "ADMIN" /tmp/passwd
+  773  grep -vn "Admin" /tmp/passwd 
+  774  grep -n "Admin" /tmp/passwd 
+  775  grep -vn "Admin" /tmp/passwd 
+  776  grep -c "Admin" /tmp/passwd 
+  777  grep -c "root" /tmp/passwd 
+  778  grep -E "root|chaitanya" /tmp/passwd 
+  779  grep -E "root|chaitanya|Admin" /tmp/passwd 
+  780  tail /var/log/messages
+  781  cat /var/log/messages
+  782  clear
+  783  grep -ni "Failed" /var/log/messages
+  784  grep -ni "ERROR" /var/log/messages
+  785  grep -ni "SSH" /var/log/messages
+  786  grep -ni "HTTPD" /var/log/messages
+  787  grep -ni "apache" /var/log/messages
+  788  clear
+  789  ##you can combine grep with other commands to filkter thier output
+  790  yum list installed 
+  791  yum list installed | grep "httpd"
+  792  yum list installed | grep "openssh"
+  793  cat /etc/os-release 
+  794  cat /etc/os-release | grep -i "ID"
+  795  #Q diff find and grep
+  796  #Grep -i
+  797  #grep -v
+  798  find /etc -perm 777
+  799  find /etc -perm 400
+  800  find / -perm 400
+  801  clear
+  802  history

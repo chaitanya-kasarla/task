@@ -1,0 +1,51 @@
+#used to see the contents of a file
+  671  cat galaxy20
+  672  cat Galaxy20
+  673  cat bashrc.bak 
+  674  cat Galaxy20 
+  675  clear
+  676  cat Galaxy20 
+  677  cat > Galaxy20 
+  678  cat Galaxy20 
+  679  cat > Galaxy20 
+  680  cat Galaxy20
+  681  cat >> Galaxy20
+  682  cat Galaxy20 
+  683  #">"
+  684  #">"   single redirector overwrites the file
+  685  #">>"  append (add the content in next line)
+  686  ls
+  687  clear
+  688  cat hello.txt
+  689  cat > hello.txt
+  690  cat hello.txt 
+  691  clear
+  692  cat > hello.txt 
+  693  cat hello.txt 
+  694  clear
+  695  cat >> hello.txt
+  696  cat hello.txt 
+  697  clear
+  698  #echo 
+  699  whatis echo
+  700  clear
+  701  echo "HELLO STUDENTS"
+  702  echo "Good Morning!"
+  703  echo "THIS IS MY FILE, THE CONTENT IS WRITTEN IN echo command"
+  704  echo "THIS IS MY FILE, THE CONTENT IS WRITTEN IN echo command" > echofile.txt
+  705  cat echofile.txt 
+  706  clear
+  707  #">"
+  708  #this can actuall redirect output of any command into any file
+  709  touch grand.txt
+  710  cat > grand.txt 
+  711  echo "content"
+  712  echo "content" > nayafile.txt
+  713* 
+  714  cat nayafile.txt 
+  715  echo "content2" > nayafile.txt 
+  716  cat nayafile.txt 
+  717  echo "content-3" >> nayafile.txt 
+  718  cat nayafile.txt 
+  719  clear
+  720  history
